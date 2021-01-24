@@ -6,10 +6,6 @@ This example shows how to leverage [Okteto](https://github.com/okteto/okteto) to
 - A Java Spring Boot **api**.
 - A [MySQL](https://www.mysql.com/) database.
 
-## Preview
-
-![App Screenshot](screenshot.png)
-
 ## Tutorial
 
 - Deploy the **Polling App** on your personal namespace by clicking on the following button:
