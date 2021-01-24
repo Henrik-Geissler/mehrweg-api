@@ -23,7 +23,7 @@ jobs:
       uses: okteto/apply@master
       with:
         manifest: okteto-pipeline.yml
-        validate: false
+        args: "validate=false"
     - name: Verify
       uses: srt32/uptime@master
       with:
