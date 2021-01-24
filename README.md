@@ -1,3 +1,11 @@
+
+
+https://polling-henrik-geissler.cloud.okteto.net
+https://polling-henrik-geissler.cloud.okteto.net/api
+
+
+
+
 ## Polling App: React + Java Spring Boot (Maven) + MySQL
 
 This example shows how to leverage [Okteto](https://github.com/okteto/okteto) to develop a React + Java Spring Boot (Maven) + MySQL Sample App directly on Okteto Cloud. The Sample App is deployed using a [kustomize](https://github.com/okteto/polling/blob/master/okteto-pipeline.yml). It creates the following components:
