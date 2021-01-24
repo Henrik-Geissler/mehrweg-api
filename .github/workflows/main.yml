@@ -1,6 +1,6 @@
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
@@ -26,10 +26,5 @@ jobs:
     - name: "Trigger the pipeline"
       uses: okteto/pipeline@master
       with:
-        name: pr-${{ github.event.number }}
+        name: mehrweg-api
         timeout: 8m
-    - name: Verify
-      uses: srt32/uptime@master
-      with:
-        url-to-hit: "https://polling-henrik-geissler.cloud.okteto.net/api"
-        expected-statuses: "200" 
