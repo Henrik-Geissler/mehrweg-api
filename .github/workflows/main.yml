@@ -19,7 +19,7 @@ jobs:
         name: henrik-geissler
 
     - name: "Create deployment"
-      uses: okteto/apply@master
+      run: kubectl apply -f okteto-pipeline.yml --validate=false
     - name: Verify
       uses: srt32/uptime@master
       with:
