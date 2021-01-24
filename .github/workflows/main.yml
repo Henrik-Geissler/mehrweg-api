@@ -15,7 +15,7 @@ jobs:
     - name: "Activate Namespace"
       uses: okteto/namespace@master
       with:
-        name: henrik-geissler
+        namespace: henrik-geissler
     
     - name: "Deploy application"
       uses: okteto/apply@master
