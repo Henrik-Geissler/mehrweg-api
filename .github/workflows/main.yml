@@ -21,7 +21,6 @@ jobs:
       uses: okteto/apply@master
       with:
         namespace: henrik-geissler
-        manifest: api/okteto.yml
 
     - name: "Push changes"
       uses: okteto/push@master
