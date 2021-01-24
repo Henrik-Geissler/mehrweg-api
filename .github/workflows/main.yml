@@ -21,7 +21,7 @@ jobs:
     - name: "Create deployment"
       uses: okteto/apply@master
       with:
-        manifest: okteto-pipeline.yml
+        manifest: k8s/api.yml
     - name: Verify
       uses: srt32/uptime@master
       with:
