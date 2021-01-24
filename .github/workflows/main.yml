@@ -1,6 +1,10 @@
-on: [push]
 
-name: CI
+on:
+  pull_request:
+    branches:
+      - main
+
+name: PR
 
 jobs:
   devflow:
