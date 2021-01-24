@@ -15,16 +15,16 @@ jobs:
     - name: "Activate Namespace"
       uses: okteto/namespace@master
       with:
-        name: henrik-geissler
+        name: cindylopez
     
     - name: "Deploy application"
       uses: okteto/apply@master
       with:
-        namespace: henrik-geissler
+        namespace: cindylopez
         manifest: k8s.yaml
 
     - name: "Push changes"
       uses: okteto/push@master
       with:
-        namespace: henrik-geissler
+        namespace: cindylopez
         name: hello-world
