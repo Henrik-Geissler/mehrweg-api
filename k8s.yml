@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - name: api
-        image: okteto/hello-world:java-gradle
+        image: henrikgeissler/hello-world:java-gradle
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
