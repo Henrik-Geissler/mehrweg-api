@@ -3,24 +3,28 @@ on: [push]
 name: CI
 
 jobs:
+
   devflow:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@master    
-
-    - name: Login
-      uses: okteto/login@master
+    
+    - uses: okteto/login@master
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
-
+    
     - name: "Activate Namespace"
       uses: okteto/namespace@master
       with:
         name: henrik-geissler
     
-    - name: "Trigger the pipeline"
-      uses: okteto/pipeline@master
+    - name: "Deploy application"
+      uses: okteto/apply@master
       with:
-        name: pr-${{ github.event.number }}
-        timeout: 8m
+        namespace: henrik-geissler
+        manifest: k8s.yaml
+
+    - name: "Push changes"
+      uses: okteto/push@master
+      with:
+        namespace: henrik-geissler
+        name: hello-world
