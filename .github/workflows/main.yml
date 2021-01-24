@@ -11,11 +11,6 @@ jobs:
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }} 
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }} 
-    - name: Build
-      uses: okteto/actions/build@v1
-      with:
-        token: ${{ secrets.OKTETO_TOKEN }}
-        tag: ${{ secrets.DOCKER_USERNAME }}/hello-world:${{ github.sha }}
     - name: Get Kubeconfig
       uses: okteto/actions/namespace@v1
       id: namespace
