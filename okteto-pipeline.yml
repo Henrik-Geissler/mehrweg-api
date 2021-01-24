@@ -1,3 +1,5 @@
+apiVersion: apps/v1           # API version
+kind: Pipeline              # Type of kubernetes resource
 icon: https://github.com/okteto/polling/raw/master/icon.png
 deploy:
   - okteto build -t okteto.dev/frontend:${OKTETO_GIT_COMMIT} frontend
