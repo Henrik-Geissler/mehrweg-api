@@ -5,6 +5,8 @@ https://polling-henrik-geissler.cloud.okteto.net/api
 
 
 
+P. Wilhelm V.
+
 
 ## Polling App: React + Java Spring Boot (Maven) + MySQL
 
