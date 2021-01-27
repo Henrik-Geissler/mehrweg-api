@@ -58,3 +58,7 @@ This example shows how to leverage [Okteto](https://github.com/okteto/okteto) to
     Welcome to your development environment. Happy coding!
     githubid:api okteto> mvn spring-boot:run
 ```
+
+## Current contributors
+
+- Timon Paßlick
