@@ -19,10 +19,6 @@ Fork with [GitHub Codespaces](https://github.com/features/codespaces):
 
 `git checkout -b "example branch"`
 
-## Set the original repo as remote
-
-`git remote add upstream https://github.com/mehrweg/mehrweg-api.git`
-
 ## Make your update
 
 - Make your changes to the file(s) you'd like to update.
