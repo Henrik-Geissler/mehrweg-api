@@ -1,6 +1,6 @@
 # Contributing to this repository
 
-## Ready to make a change? Fork the repo
+## Fork the repo
 
 Fork using GitHub Desktop:
 
@@ -15,12 +15,25 @@ Fork with [GitHub Codespaces](https://github.com/features/codespaces):
 
 - [Fork, edit, and preview](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/creating-a-codespace) using [GitHub Codespaces](https://github.com/features/codespaces) without having to install and run the project locally.
 
+## Switch to a new branch
+
+`git checkout -b "example branch"`
+
+## Set the original repo as remote
+
+`git remote add upstream https://github.com/mehrweg/mehrweg-api.git`
+
 ## Make your update
 
-Make your changes to the file(s) you'd like to update.
+- Make your changes to the file(s) you'd like to update.
+- [Commit](https://git-scm.com/docs/git-commit) and [push](https://git-scm.com/docs/git-push).
 
-## Open a pull request
+## Open a pull request (PR)
+
+- On the GitHub page of your forked repository, go to Pull Requests (at the top, right next to "Code").
+- Click the big fat green "New pull request" button at the top right and fill out the formular.
 
 ## Submit your PR & get it reviewed
 
-Did you have an issue, like a merge conflict? Check out our [git tutorial](https://lab.github.com/githubtraining/managing-merge-conflicts) on how to resolve merge conflicts and other issues.
+- Everyone can merge (accept) your PR except you. This is to make sure at least four eyes see each change.
+- Did you have an issue, like a merge conflict? Check out the [git tutorial](https://lab.github.com/githubtraining/managing-merge-conflicts) on how to resolve merge conflicts and other issues.
