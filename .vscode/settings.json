@@ -1,3 +1,10 @@
 {
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "explorer.confirmDelete": false,
+    "diffEditor.wordWrap": "on",
+    "editor.codeActionsOnSave": null,
+    "explorer.confirmDragAndDrop": false,
+    "git.enableSmartCommit": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
 }
