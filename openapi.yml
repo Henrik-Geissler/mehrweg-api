@@ -1,135 +1,135 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
-  description: "This is the OpenAPI Spec of app/mehrweg."
-  version: "1.0.0"
-  title: "Mehrweg App"
+  description: 'This is the OpenAPI Spec of app/mehrweg.'
+  version: '1.0.0'
+  title: 'Mehrweg App'
   #TODO: Connect me
-  termsOfService: "http://swagger.io/terms/"
+  termsOfService: 'http://swagger.io/terms/'
   contact:
     #TODO: Connect me
-    email: "apiteam@swagger.io"
+    email: 'apiteam@swagger.io'
   license:
-    name: "Apache 2.0"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "api.mehrweg.app"
-basePath: "/v2"
+    name: 'Apache 2.0'
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: 'api.mehrweg.app'
+basePath: '/v2'
 tags:
-- name: "user"
-  description: "Operations about user"
-- name: "itemCategory"
-  description: "Access to Item Categories e.g. Becher, Teller, ..."
-- name: "item"
-  description: "Access to Items"
-- name: "action"
-  description: "Access to Actions (Laden, Entladen, ...)"
+  - name: 'user'
+    description: 'Operations about user'
+  - name: 'itemCategory'
+    description: 'Access to Item Categories e.g. Becher, Teller, ...'
+  - name: 'item'
+    description: 'Access to Items'
+  - name: 'action'
+    description: 'Access to Actions (Laden, Entladen, ...)'
 schemes:
-- "https"
-- "http"
+  - 'https'
+  - 'http'
 paths:
   /itemCategory:
     post:
       tags:
-      - "itemCategory"
-      summary: "Create itemCategory"
-      description: "This can only be done by the logged in admin."
-      operationId: "createItemCategory"
+        - 'itemCategory'
+      summary: 'Create itemCategory'
+      description: 'This can only be done by the logged in admin.'
+      operationId: 'createItemCategory'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - in: "body"
-        name: "body"
-        description: "Created itemCategory object"
-        required: true
-        schema:
-          $ref: "#/definitions/ItemCategory"
+        - in: 'body'
+          name: 'body'
+          description: 'Created itemCategory object'
+          required: true
+          schema:
+            $ref: '#/definitions/ItemCategory'
       responses:
         default:
-          description: "successful operation"
+          description: 'successful operation'
       security:
-      - mehrweg_auth:
-        - "admin"
+        - mehrweg_auth:
+            - 'admin'
   /itemCategory/{id}:
     get:
       tags:
-      - "itemCategory"
-      summary: "Get itemCategory by id"
-      description: ""
-      operationId: "getItemCategoryById"
+        - 'itemCategory'
+      summary: 'Get itemCategory by id'
+      description: ''
+      operationId: 'getItemCategoryById'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "id"
-        in: "path"
-        description: "The id that needs to be fetched. "
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: 'id'
+          in: 'path'
+          description: 'The id that needs to be fetched. '
+          required: true
+          type: 'integer'
+          format: 'int64'
       responses:
-        "200":
-          description: "successful operation"
+        '200':
+          description: 'successful operation'
           schema:
-            $ref: "#/definitions/ItemCategory"
-        "400":
-          description: "Invalid name supplied"
-        "404":
-          description: "ItemCategory not found"
+            $ref: '#/definitions/ItemCategory'
+        '400':
+          description: 'Invalid name supplied'
+        '404':
+          description: 'ItemCategory not found'
     put:
       tags:
-      - "itemCategory"
-      summary: "Updated ItemCategory"
-      description: "This can only be done by the logged in admin."
-      operationId: "updateItemCategory"
+        - 'itemCategory'
+      summary: 'Updated ItemCategory'
+      description: 'This can only be done by the logged in admin.'
+      operationId: 'updateItemCategory'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "id"
-        in: "path"
-        description: "id that need to be updated"
-        required: true
-        type: "integer"
-        format: "int64"
-      - in: "body"
-        name: "body"
-        description: "Updated itemCategory object"
-        required: true
-        schema:
-          $ref: "#/definitions/ItemCategory"
+        - name: 'id'
+          in: 'path'
+          description: 'id that need to be updated'
+          required: true
+          type: 'integer'
+          format: 'int64'
+        - in: 'body'
+          name: 'body'
+          description: 'Updated itemCategory object'
+          required: true
+          schema:
+            $ref: '#/definitions/ItemCategory'
       responses:
-        "400":
-          description: "Invalid id supplied"
-        "404":
-          description: "ItemCategory not found"
+        '400':
+          description: 'Invalid id supplied'
+        '404':
+          description: 'ItemCategory not found'
       security:
-      - mehrweg_auth:
-        - "admin"
+        - mehrweg_auth:
+            - 'admin'
     delete:
       tags:
-      - "itemCategory"
-      summary: "Delete itemCategory"
-      description: "This can only be done by the logged in admin."
-      operationId: "deleteItemCategory"
+        - 'itemCategory'
+      summary: 'Delete itemCategory'
+      description: 'This can only be done by the logged in admin.'
+      operationId: 'deleteItemCategory'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "id"
-        in: "path"
-        description: "The id that needs to be deleted"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: 'id'
+          in: 'path'
+          description: 'The id that needs to be deleted'
+          required: true
+          type: 'integer'
+          format: 'int64'
       responses:
-        "400":
-          description: "Invalid id supplied"
-        "404":
-          description: "ItemCategory not found"
+        '400':
+          description: 'Invalid id supplied'
+        '404':
+          description: 'ItemCategory not found'
       security:
-      - mehrweg_auth:
-        - "admin"
+        - mehrweg_auth:
+            - 'admin'
   /action:
     post:
       tags:
-      - "action"
-      summary: "Create action"
+        - 'action'
+      summary: 'Create action'
       description: >
         This can only be done by the logged in user.           
         newAction(int gastroId, string qrcode, enum type){
@@ -149,474 +149,474 @@ paths:
         		update item.value = out
         		return out
         }
-      operationId: "createAction"
+      operationId: 'createAction'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - in: "body"
-        name: "body"
-        description: "Created action object"
-        required: true
-        schema:
-          $ref: "#/definitions/Action"
-      responses:
-        "200":
-          description: "successful operation"
+        - in: 'body'
+          name: 'body'
+          description: 'Created action object'
+          required: true
           schema:
-            $ref: "#/definitions/Action"
-        "400":
-          description: "Invalid Action"
+            $ref: '#/definitions/Action'
+      responses:
+        '200':
+          description: 'successful operation'
+          schema:
+            $ref: '#/definitions/Action'
+        '400':
+          description: 'Invalid Action'
   /action/{id}:
     get:
       tags:
-      - "action"
-      summary: "Find action by ID"
-      description: ""
-      operationId: "getActionById"
+        - 'action'
+      summary: 'Find action by ID'
+      description: ''
+      operationId: 'getActionById'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "id"
-        in: "path"
-        description: "ID of action that needs to be fetched"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: 'id'
+          in: 'path'
+          description: 'ID of action that needs to be fetched'
+          required: true
+          type: 'integer'
+          format: 'int64'
       responses:
-        "200":
-          description: "successful operation"
+        '200':
+          description: 'successful operation'
           schema:
-            $ref: "#/definitions/Action"
-        "400":
-          description: "Invalid ID supplied"
-        "404":
-          description: "Order not found"
+            $ref: '#/definitions/Action'
+        '400':
+          description: 'Invalid ID supplied'
+        '404':
+          description: 'Order not found'
     delete:
       tags:
-      - "action"
-      summary: "Delete action by Id"
-      description: ""
-      operationId: "deleteAction"
+        - 'action'
+      summary: 'Delete action by Id'
+      description: ''
+      operationId: 'deleteAction'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "id"
-        in: "path"
-        description: "ID of the action that needs to be deleted"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: 'id'
+          in: 'path'
+          description: 'ID of the action that needs to be deleted'
+          required: true
+          type: 'integer'
+          format: 'int64'
       responses:
-        "400":
-          description: "Invalid ID supplied"
-        "404":
-          description: "Action not found"
+        '400':
+          description: 'Invalid ID supplied'
+        '404':
+          description: 'Action not found'
   /item:
     post:
       tags:
-      - "item"
-      summary: "Create item"
-      description: "This can only be done by the logged in user."
-      operationId: "createItem"
+        - 'item'
+      summary: 'Create item'
+      description: 'This can only be done by the logged in user.'
+      operationId: 'createItem'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - in: "body"
-        name: "body"
-        description: "Created item object"
-        required: true
-        schema:
-          $ref: "#/definitions/Item"
+        - in: 'body'
+          name: 'body'
+          description: 'Created item object'
+          required: true
+          schema:
+            $ref: '#/definitions/Item'
       responses:
         default:
-          description: "successful operation"
+          description: 'successful operation'
   /item/{qrCode}:
     get:
       tags:
-      - "item"
-      summary: "Get item by qrCode"
-      description: ""
-      operationId: "getItemByQrCode"
+        - 'item'
+      summary: 'Get item by qrCode'
+      description: ''
+      operationId: 'getItemByQrCode'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "qrCode"
-        in: "path"
-        description: "The qrcode that needs to be fetched. "
-        required: true
-        type: "string"
+        - name: 'qrCode'
+          in: 'path'
+          description: 'The qrcode that needs to be fetched. '
+          required: true
+          type: 'string'
       responses:
-        "200":
-          description: "successful operation"
+        '200':
+          description: 'successful operation'
           schema:
-            $ref: "#/definitions/Item"
-        "400":
-          description: "Invalid qrcode supplied"
-        "404":
-          description: "Item not found"
+            $ref: '#/definitions/Item'
+        '400':
+          description: 'Invalid qrcode supplied'
+        '404':
+          description: 'Item not found'
     put:
       tags:
-      - "item"
-      summary: "Updated Item"
-      description: "This can only be done by the logged in admin."
-      operationId: "updateItem"
+        - 'item'
+      summary: 'Updated Item'
+      description: 'This can only be done by the logged in admin.'
+      operationId: 'updateItem'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "qrCode"
-        in: "path"
-        description: "name that need to be updated"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        description: "Updated itemCategory object"
-        required: true
-        schema:
-          $ref: "#/definitions/ItemCategory"
+        - name: 'qrCode'
+          in: 'path'
+          description: 'name that need to be updated'
+          required: true
+          type: 'string'
+        - in: 'body'
+          name: 'body'
+          description: 'Updated itemCategory object'
+          required: true
+          schema:
+            $ref: '#/definitions/ItemCategory'
       responses:
-        "400":
-          description: "Invalid itemCategory supplied"
-        "404":
-          description: "ItemCategory not found"
+        '400':
+          description: 'Invalid itemCategory supplied'
+        '404':
+          description: 'ItemCategory not found'
       security:
-      - mehrweg_auth:
-        - "admin"
+        - mehrweg_auth:
+            - 'admin'
     delete:
       tags:
-      - "item"
-      summary: "Delete item"
-      description: "This can only be done by the logged in admin."
-      operationId: "deleteItem"
+        - 'item'
+      summary: 'Delete item'
+      description: 'This can only be done by the logged in admin.'
+      operationId: 'deleteItem'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "qrCode"
-        in: "path"
-        description: "The qrcode that needs to be deleted"
-        required: true
-        type: "string"
+        - name: 'qrCode'
+          in: 'path'
+          description: 'The qrcode that needs to be deleted'
+          required: true
+          type: 'string'
       responses:
-        "400":
-          description: "Invalid name supplied"
-        "404":
-          description: "Item not found"
+        '400':
+          description: 'Invalid name supplied'
+        '404':
+          description: 'Item not found'
       security:
-      - mehrweg_auth:
-        - "admin"
+        - mehrweg_auth:
+            - 'admin'
   /item/{qrCode}/getCharge:
     get:
       tags:
-      - "item"
-      summary: "Get item charge by qrCode"
-      description: ""
-      operationId: "getItemChargeByQrCode"
+        - 'item'
+      summary: 'Get item charge by qrCode'
+      description: ''
+      operationId: 'getItemChargeByQrCode'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "qrCode"
-        in: "path"
-        description: "The qrcode that needs to be fetched."
-        required: true
-        type: "string"
+        - name: 'qrCode'
+          in: 'path'
+          description: 'The qrcode that needs to be fetched.'
+          required: true
+          type: 'string'
       responses:
-        "200":
-          description: "successful operation"
+        '200':
+          description: 'successful operation'
           schema:
-            type: "integer"
-            format: "int64"
-        "400":
-          description: "Invalid qrcode supplied"
-        "404":
-          description: "Item not found"
+            type: 'integer'
+            format: 'int64'
+        '400':
+          description: 'Invalid qrcode supplied'
+        '404':
+          description: 'Item not found'
   /user:
     post:
       tags:
-      - "user"
-      summary: "Create user"
-      description: "This can only be done by the logged in user."
-      operationId: "createUser"
+        - 'user'
+      summary: 'Create user'
+      description: 'This can only be done by the logged in user.'
+      operationId: 'createUser'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - in: "body"
-        name: "body"
-        description: "Created user object"
-        required: true
-        schema:
-          $ref: "#/definitions/User"
+        - in: 'body'
+          name: 'body'
+          description: 'Created user object'
+          required: true
+          schema:
+            $ref: '#/definitions/User'
       responses:
         default:
-          description: "successful operation"
+          description: 'successful operation'
   /user/createWithArray:
     post:
       tags:
-      - "user"
-      summary: "Creates list of users with given input array"
-      description: ""
-      operationId: "createUsersWithArrayInput"
+        - 'user'
+      summary: 'Creates list of users with given input array'
+      description: ''
+      operationId: 'createUsersWithArrayInput'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - in: "body"
-        name: "body"
-        description: "List of user object"
-        required: true
-        schema:
-          type: "array"
-          items:
-            $ref: "#/definitions/User"
+        - in: 'body'
+          name: 'body'
+          description: 'List of user object'
+          required: true
+          schema:
+            type: 'array'
+            items:
+              $ref: '#/definitions/User'
       responses:
         default:
-          description: "successful operation"
+          description: 'successful operation'
       security:
-      - mehrweg_auth:
-        - "admin"
+        - mehrweg_auth:
+            - 'admin'
   /user/createWithList:
     post:
       tags:
-      - "user"
-      summary: "Creates list of users with given input array"
-      description: ""
-      operationId: "createUsersWithListInput"
+        - 'user'
+      summary: 'Creates list of users with given input array'
+      description: ''
+      operationId: 'createUsersWithListInput'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - in: "body"
-        name: "body"
-        description: "List of user object"
-        required: true
-        schema:
-          type: "array"
-          items:
-            $ref: "#/definitions/User"
+        - in: 'body'
+          name: 'body'
+          description: 'List of user object'
+          required: true
+          schema:
+            type: 'array'
+            items:
+              $ref: '#/definitions/User'
       responses:
         default:
-          description: "successful operation"
+          description: 'successful operation'
       security:
-      - mehrweg_auth:
-        - "admin"
+        - mehrweg_auth:
+            - 'admin'
   /user/login:
     get:
       tags:
-      - "user"
-      summary: "Logs user into the system"
-      description: ""
-      operationId: "loginUser"
+        - 'user'
+      summary: 'Logs user into the system'
+      description: ''
+      operationId: 'loginUser'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "username"
-        in: "query"
-        description: "The user name for login"
-        required: true
-        type: "string"
-      - name: "password"
-        in: "query"
-        description: "The password for login in clear text"
-        required: true
-        type: "string"
+        - name: 'username'
+          in: 'query'
+          description: 'The user name for login'
+          required: true
+          type: 'string'
+        - name: 'password'
+          in: 'query'
+          description: 'The password for login in clear text'
+          required: true
+          type: 'string'
       responses:
-        "200":
-          description: "successful operation"
+        '200':
+          description: 'successful operation'
           schema:
-            type: "string"
+            type: 'string'
           headers:
             X-Rate-Limit:
-              type: "integer"
-              format: "int32"
-              description: "calls per hour allowed by the user"
+              type: 'integer'
+              format: 'int32'
+              description: 'calls per hour allowed by the user'
             X-Expires-After:
-              type: "string"
-              format: "date-time"
-              description: "date in UTC when token expires"
-        "400":
-          description: "Invalid username/password supplied"
+              type: 'string'
+              format: 'date-time'
+              description: 'date in UTC when token expires'
+        '400':
+          description: 'Invalid username/password supplied'
   /user/logout:
     get:
       tags:
-      - "user"
-      summary: "Logs out current logged in user session"
-      description: ""
-      operationId: "logoutUser"
+        - 'user'
+      summary: 'Logs out current logged in user session'
+      description: ''
+      operationId: 'logoutUser'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters: []
       responses:
         default:
-          description: "successful operation"
+          description: 'successful operation'
   /user/{id}:
     get:
       tags:
-      - "user"
-      summary: "Get user by user name"
-      description: ""
-      operationId: "getUserById"
+        - 'user'
+      summary: 'Get user by user name'
+      description: ''
+      operationId: 'getUserById'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "id"
-        in: "path"
-        description: "The id that needs to be fetched."
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: 'id'
+          in: 'path'
+          description: 'The id that needs to be fetched.'
+          required: true
+          type: 'integer'
+          format: 'int64'
       responses:
-        "200":
-          description: "successful operation"
+        '200':
+          description: 'successful operation'
           schema:
-            $ref: "#/definitions/User"
-        "400":
-          description: "Invalid id supplied"
-        "404":
-          description: "User not found"
+            $ref: '#/definitions/User'
+        '400':
+          description: 'Invalid id supplied'
+        '404':
+          description: 'User not found'
     put:
       tags:
-      - "user"
-      summary: "Updated user"
-      description: "This can only be done by the logged in user."
-      operationId: "updateUser"
+        - 'user'
+      summary: 'Updated user'
+      description: 'This can only be done by the logged in user.'
+      operationId: 'updateUser'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "id"
-        in: "path"
-        description: "name that need to be updated"
-        required: true
-        type: "integer"
-        format: "int64"
-      - in: "body"
-        name: "body"
-        description: "Updated user object"
-        required: true
-        schema:
-          $ref: "#/definitions/User"
+        - name: 'id'
+          in: 'path'
+          description: 'name that need to be updated'
+          required: true
+          type: 'integer'
+          format: 'int64'
+        - in: 'body'
+          name: 'body'
+          description: 'Updated user object'
+          required: true
+          schema:
+            $ref: '#/definitions/User'
       responses:
-        "400":
-          description: "Invalid user supplied"
-        "404":
-          description: "User not found"
+        '400':
+          description: 'Invalid user supplied'
+        '404':
+          description: 'User not found'
     delete:
       tags:
-      - "user"
-      summary: "Delete user"
-      description: "This can only be done by the logged in user."
-      operationId: "deleteUser"
+        - 'user'
+      summary: 'Delete user'
+      description: 'This can only be done by the logged in user.'
+      operationId: 'deleteUser'
       produces:
-      - "application/json"
+        - 'application/json'
       parameters:
-      - name: "id"
-        in: "path"
-        description: "The name that needs to be deleted"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: 'id'
+          in: 'path'
+          description: 'The name that needs to be deleted'
+          required: true
+          type: 'integer'
+          format: 'int64'
       responses:
-        "400":
-          description: "Invalid username supplied"
-        "404":
-          description: "User not found"
+        '400':
+          description: 'Invalid username supplied'
+        '404':
+          description: 'User not found'
 securityDefinitions:
   mehrweg_auth:
-    type: "oauth2"
+    type: 'oauth2'
     #TODO: Connect me
-    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
-    flow: "implicit"
+    authorizationUrl: 'http://petstore.swagger.io/oauth/dialog'
+    flow: 'implicit'
     scopes:
-      admin: "Create new Categories, read everything"
-      authorized: "logged in user"
+      admin: 'Create new Categories, read everything'
+      authorized: 'logged in user'
   api_key:
-    type: "apiKey"
-    name: "api_key"
-    in: "header"
+    type: 'apiKey'
+    name: 'api_key'
+    in: 'header'
 definitions:
   Action:
-    type: "object"
+    type: 'object'
     properties:
       id:
-        type: "integer"
-        format: "int64"
+        type: 'integer'
+        format: 'int64'
       createdAt:
-        type: "string"
-        format: "date-time"
+        type: 'string'
+        format: 'date-time'
       itemId:
-          $ref: "#/definitions/Item"
+        $ref: '#/definitions/Item'
       userId:
-          $ref: "#/definitions/User"
+        $ref: '#/definitions/User'
       status:
-        type: "string"
-        description: "Order Status"
+        type: 'string'
+        description: 'Order Status'
         enum:
-        - "taken"
-        - "expired"
-        - "given"
+          - 'taken'
+          - 'expired'
+          - 'given'
   Item:
-    type: "object"
+    type: 'object'
     properties:
       id:
-        type: "integer"
-        format: "int64"
+        type: 'integer'
+        format: 'int64'
       createdAt:
-        type: "string"
-        format: "date-time"
+        type: 'string'
+        format: 'date-time'
       qrCode:
-        type: "string"
+        type: 'string'
       charge:
-        type: "integer"
-        format: "int64"
+        type: 'integer'
+        format: 'int64'
       categoryId:
-        $ref: "#/definitions/ItemCategory"
+        $ref: '#/definitions/ItemCategory'
   ItemCategory:
-    type: "object"
+    type: 'object'
     properties:
       id:
-        type: "integer"
-        format: "int64"
+        type: 'integer'
+        format: 'int64'
       createdAt:
-        type: "string"
-        format: "date-time"
+        type: 'string'
+        format: 'date-time'
       name:
-        type: "string"
+        type: 'string'
       price:
-        type: "integer"
-        format: "int64"
+        type: 'integer'
+        format: 'int64'
   User:
-    type: "object"
+    type: 'object'
     properties:
       id:
-        type: "integer"
-        format: "int64"
+        type: 'integer'
+        format: 'int64'
       createdAt:
-        type: "string"
-        format: "date-time"
+        type: 'string'
+        format: 'date-time'
       username:
-        type: "string"
+        type: 'string'
       firstName:
-        type: "string"
+        type: 'string'
       lastName:
-        type: "string"
+        type: 'string'
       email:
-        type: "string"
+        type: 'string'
       password:
-        type: "string"
+        type: 'string'
       phone:
-        type: "string"
+        type: 'string'
       street:
-        type: "string"
+        type: 'string'
       userStatus:
-        type: "integer"
-        format: "int32"
-        description: "User Status"
+        type: 'integer'
+        format: 'int32'
+        description: 'User Status'
       zip:
-        type: "integer"
-        format: "int32"
+        type: 'integer'
+        format: 'int32'
   ApiResponse:
-    type: "object"
+    type: 'object'
     properties:
       code:
-        type: "integer"
-        format: "int32"
+        type: 'integer'
+        format: 'int32'
       type:
-        type: "string"
+        type: 'string'
       message:
-        type: "string"
+        type: 'string'

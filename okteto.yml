@@ -10,5 +10,5 @@ forward:
   - 5005:5005
 resources:
   limits:
-    cpu: "2"
+    cpu: '2'
     memory: 4Gi

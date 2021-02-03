@@ -4,4 +4,4 @@ deploy:
   - cd k8s && kustomize edit set image api=okteto.dev/api:${OKTETO_GIT_COMMIT}
   - kubectl apply -k k8s
 devs:
-  - api/okteto.yml  
+  - api/okteto.yml
