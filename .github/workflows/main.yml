@@ -10,6 +10,7 @@ jobs:
   swagger:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
     - name: Upload openapi.yaml
       uses: actions/upload-artifact@v2
       with:
