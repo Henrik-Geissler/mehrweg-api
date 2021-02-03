@@ -28,4 +28,4 @@ nbdist/
 !.elasticbeanstalk/*.global.yml
 .ebextensions
 
-src/main/resources/application-prod.properties
+src_deprecated/main/resources/application-prod.properties
