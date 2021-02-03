@@ -1,8 +1,6 @@
 
 
-https://polling-henrik-geissler.cloud.okteto.net/api
-
-
+[Api Specification](https://mehrweg.github.io/mehrweg-api) 
 
 
 ## Polling App: React + Java Spring Boot (Maven) + MySQL
