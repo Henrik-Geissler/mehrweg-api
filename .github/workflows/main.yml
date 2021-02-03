@@ -9,11 +9,12 @@ jobs:
   swagger:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
     - name: Generate Swagger UI
       uses: Legion2/swagger-ui-action@v1
       with:
         output: swagger-ui
-        spec-file: openapi.json
+        spec-file: openapi.yaml
         #swagger-config-file:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
