@@ -11,15 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Upload openapi.yaml
-      uses: actions/upload-artifact@v2
-      with:
-        name: spec-file
-        path: ${{ github.workspace }}/icon.png
-    - name: Download openapi.yaml
-      uses: actions/download-artifact@v2
-      with:
-        name: spec-file
     - name: Generate Swagger UI
       uses: Legion2/swagger-ui-action@v1
       with:
